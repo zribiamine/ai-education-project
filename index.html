@@ -3,129 +3,162 @@
 <head>
     <title>AI Tools for Students</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
 body {
-    background-image: url("aii.jpg");
-    background-size: cover;      /* fills the whole screen */
-    background-position: center; /* keeps it balanced */
-    background-repeat: no-repeat;
     margin: 0;
-    padding: 20px;
+    font-family: Arial;
+    background-image: url("aii.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-        h1 {
-            text-align: center;
-            color: #fdfdfd;
-        }
+/* HERO SECTION */
+.hero {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
 
-        p {
-            text-align: center;
-            color: beige;
-        }
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+}
 
+.hero h1,
+.hero p {
+    position: relative;
+}
 
+/* CONTAINER */
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 12px;
+    padding: 20px;
+    margin-top: -40px;
 }
 
-    .card {
-  
+/* CARD */
+.card {
     background: rgba(255, 255, 255, 0.92);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: 0.3s;
-
     font-size: 14px;
     min-height: 120px;
-
 }
 
-        .card:hover {
-            transform: scale(1.05);
-        }
+.card:hover {
+    transform: scale(1.05);
+}
 
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 6px 10px;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 10px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
 
-        .card a:hover {
-            background: #1d6fa5;
-        }
-        .desc {
+.card a:hover {
+    background: #1d6fa5;
+}
+
+.desc {
     font-size: 12px;
     color: rgb(57, 60, 65);
     margin: 5px 0;
 }
-       @media (max-width: 768px) {
-    body {
-        background-size: cover;
-        background-position: center;
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .hero {
+        height: 200px;
     }
 }
-
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-<h1> AI Tools for Students</h1>
-<p>Best Artificial Intelligence tools to help students learn smarter and faster</p>
+<!-- HERO -->
+<div class="hero">
+    <h1>🤖 AI Tools for Students</h1>
+    <p>Best Artificial Intelligence tools to help students learn smarter and faster</p>
+</div>
 
+<!-- CARDS -->
 <div class="container">
 
-    <div class="card">ChatGPT <br><p class="desc">AI assistant for answering questions and helping with studies</p><a href="https://chat.openai.com" target="_blank">Open</a></div>
-    <div class="card">Google Gemini <br><p class="desc">Google’s AI tool for research, writing, and problem solving.</p><a href="https://gemini.google.com" target="_blank">Open</a></div>
-    <div class="card">Perplexity AI <br><p class="desc">Search engine with AI answers and reliable sources.</p><a href="https://www.perplexity.ai" target="_blank">Open</a></div>
-    <div class="card">Claude AI <br><p class="desc">AI assistant focused on writing, analysis, and long documents.</p><a href="https://claude.ai" target="_blank">Open</a></div>
-    <div class="card">Notion AI <br><p class="desc">Helps organize notes, summarize content, and boost productivity.</p><a href="https://www.notion.so/product/ai" target="_blank">Open</a></div>
+    <div class="card">ChatGPT <p class="desc">AI assistant for answering questions and helping with studies</p><a href="https://chat.openai.com" target="_blank">Open</a></div>
 
-    <div class="card">Grammarly <br><p class="desc">Checks grammar, spelling, and improves writing clarity.</p><a href="https://www.grammarly.com" target="_blank">Open</a></div>
-    <div class="card">QuillBot <br><p class="desc">Paraphrases text and improves sentence structure.</p><a href="https://quillbot.com" target="_blank">Open</a></div>
-    <div class="card">Canva AI <br><p class="desc">Creates designs, presentations, and visuals easily.</p><a href="https://www.canva.com" target="_blank">Open</a></div>
+    <div class="card">Google Gemini <p class="desc">Google’s AI tool for research, writing, and problem solving.</p><a href="https://gemini.google.com" target="_blank">Open</a></div>
 
-<div class="card">Duolingo <br><p class="desc">Learn languages in a fun and interactive way.</p><a href="https://www.duolingo.com" target="_blank">Open</a></div>
+    <div class="card">Perplexity AI <p class="desc">Search engine with AI answers and reliable sources.</p><a href="https://www.perplexity.ai" target="_blank">Open</a></div>
 
-<div class="card">NotebookLM (Google) <br><p class="desc">Helps you understand and summarize your documents.</p><a href="https://notebooklm.google.com" target="_blank">Open</a></div>
+    <div class="card">Claude AI <p class="desc">AI assistant focused on writing, analysis, and long documents.</p><a href="https://claude.ai" target="_blank">Open</a></div>
 
-<div class="card">Socratic by Google <br><p class="desc">Explains homework questions using AI.</p><a href="https://socratic.org" target="_blank">Open</a></div>
+    <div class="card">Notion AI <p class="desc">Helps organize notes, summarize content, and boost productivity.</p><a href="https://www.notion.so/product/ai" target="_blank">Open</a></div>
 
-<div class="card">Khan Academy AI <br><p class="desc">Personalized learning with clear explanations and exercises.</p><a href="https://www.khanacademy.org" target="_blank">Open</a></div>
+    <div class="card">Grammarly <p class="desc">Checks grammar, spelling, and improves writing clarity.</p><a href="https://www.grammarly.com" target="_blank">Open</a></div>
 
-<div class="card">Mathway <br><p class="desc">Solves math problems step by step.</p><a href="https://www.mathway.com" target="_blank">Open</a></div>
+    <div class="card">QuillBot <p class="desc">Paraphrases text and improves sentence structure.</p><a href="https://quillbot.com" target="_blank">Open</a></div>
 
-<div class="card">Photomath <br><p class="desc">Scan math problems and get instant solutions.</p><a href="https://photomath.com" target="_blank">Open</a></div>
+    <div class="card">Canva AI <p class="desc">Creates designs, presentations, and visuals easily.</p><a href="https://www.canva.com" target="_blank">Open</a></div>
 
-<div class="card">Wolfram Alpha <br><p class="desc">Powerful tool for math, science, and data analysis.</p><a href="https://www.wolframalpha.com" target="_blank">Open</a></div>
+    <div class="card">Duolingo <p class="desc">Learn languages in a fun and interactive way.</p><a href="https://www.duolingo.com" target="_blank">Open</a></div>
 
-<div class="card">DeepL Translator <br><p class="desc">High-quality translation with natural results.</p><a href="https://www.deepl.com" target="_blank">Open</a></div>
+    <div class="card">NotebookLM (Google) <p class="desc">Helps you understand and summarize your documents.</p><a href="https://notebooklm.google.com" target="_blank">Open</a></div>
 
-<div class="card">Tome AI <br><p class="desc">Generates presentations automatically from ideas.</p><a href="https://tome.app" target="_blank">Open</a></div>
+    <div class="card">Socratic by Google <p class="desc">Explains homework questions using AI.</p><a href="https://socratic.org" target="_blank">Open</a></div>
 
-<div class="card">SlidesAI <br><p class="desc">Turns text into ready-to-use slides.</p><a href="https://www.slidesai.io" target="_blank">Open</a></div>
+    <div class="card">Khan Academy AI <p class="desc">Personalized learning with clear explanations and exercises.</p><a href="https://www.khanacademy.org" target="_blank">Open</a></div>
 
-<div class="card">Copy.ai <br><p class="desc">Generates text for essays, emails, and content.</p><a href="https://www.copy.ai" target="_blank">Open</a></div>
+    <div class="card">Mathway <p class="desc">Solves math problems step by step.</p><a href="https://www.mathway.com" target="_blank">Open</a></div>
 
-<div class="card">Jasper AI <br><p class="desc">Advanced writing assistant for structured content.</p><a href="https://www.jasper.ai" target="_blank">Open</a></div>
+    <div class="card">Photomath <p class="desc">Scan math problems and get instant solutions.</p><a href="https://photomath.com" target="_blank">Open</a></div>
 
-<div class="card">Elicit AI <br><p class="desc">Helps find and summarize research papers.</p><a href="https://elicit.org" target="_blank">Open</a></div>
+    <div class="card">Wolfram Alpha <p class="desc">Powerful tool for math, science, and data analysis.</p><a href="https://www.wolframalpha.com" target="_blank">Open</a></div>
 
-<div class="card">SciSpace <br><p class="desc">Explains scientific papers in simple terms.</p><a href="https://www.scispace.com" target="_blank">Open</a></div>
+    <div class="card">DeepL Translator <p class="desc">High-quality translation with natural results.</p><a href="https://www.deepl.com" target="_blank">Open</a></div>
 
-<div class="card">Otter AI <br><p class="desc">Converts speech into text for meetings and lectures.</p><a href="https://otter.ai" target="_blank">Open</a></div>
+    <div class="card">Tome AI <p class="desc">Generates presentations automatically from ideas.</p><a href="https://tome.app" target="_blank">Open</a></div>
 
-<div class="card">Gamma AI <br><p class="desc">Creates modern presentations and documents.</p><a href="https://gamma.app" target="_blank">Open</a></div>
+    <div class="card">SlidesAI <p class="desc">Turns text into ready-to-use slides.</p><a href="https://www.slidesai.io" target="_blank">Open</a></div>
 
-<div class="card">Synthesia AI <br><p class="desc">Creates videos using AI avatars.</p><a href="https://www.synthesia.io" target="_blank">Open</a></div>
+    <div class="card">Copy.ai <p class="desc">Generates text for essays, emails, and content.</p><a href="https://www.copy.ai" target="_blank">Open</a></div>
+
+    <div class="card">Jasper AI <p class="desc">Advanced writing assistant for structured content.</p><a href="https://www.jasper.ai" target="_blank">Open</a></div>
+
+    <div class="card">Elicit AI <p class="desc">Helps find and summarize research papers.</p><a href="https://elicit.org" target="_blank">Open</a></div>
+
+    <div class="card">SciSpace <p class="desc">Explains scientific papers in simple terms.</p><a href="https://www.scispace.com" target="_blank">Open</a></div>
+
+    <div class="card">Otter AI <p class="desc">Converts speech into text for meetings and lectures.</p><a href="https://otter.ai" target="_blank">Open</a></div>
+
+    <div class="card">Gamma AI <p class="desc">Creates modern presentations and documents.</p><a href="https://gamma.app" target="_blank">Open</a></div>
+
+    <div class="card">Synthesia AI <p class="desc">Creates videos using AI avatars.</p><a href="https://www.synthesia.io" target="_blank">Open</a></div>
 
 </div>
 
