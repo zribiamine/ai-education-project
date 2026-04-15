@@ -9,38 +9,51 @@ body {
     padding: 0;
 }
 
-/* TOP SECTION */
+
 .hero {
+    position: relative;
     height: 60vh;
-    background-image: url("aii.jpg");
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    position: relative;
 }
 
+/* video background */
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* dark overlay */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.4);
-}
-
-.hero h1, .hero p {
-    position: relative;
     z-index: 1;
 }
 
-/* CONTENT SECTION */
+/* text above video */
+.hero h1,
+.hero p {
+    position: relative;
+    z-index: 2;
+}
+
 .content {
     margin-top: -20px;
     padding: 20px;
-    background-image: url("aii.jpg");
+    background-image: url("ai.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -61,21 +74,25 @@ body {
     gap: 12px;
 }
 
-    .card {
-  
-    background: rgba(255, 255, 255, 0.92);
+.card {
+    background: rgba(255, 255, 255, 0.75); /* more transparent */
+    backdrop-filter: blur(6px);            /* blur behind card (glass effect) */
+    -webkit-backdrop-filter: blur(6px);    /* for Safari */
+    
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     transition: 0.3s;
 
     font-size: 14px;
     min-height: 120px;
+    border: 1px solid rgba(255,255,255,0.3);
 
 }
 
         .card:hover {
-            transform: scale(1.05);
+             transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
 
         .card a {
@@ -109,6 +126,10 @@ body {
 
 <body>
 <div class="hero">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="AI-Brain-pinterest-video-downloader.mp4" type="video/mp4">
+    </video>
+
     <h1>AI Tools for Students</h1>
     <p>Best Artificial Intelligence tools to help students learn smarter and faster</p>
 </div>
