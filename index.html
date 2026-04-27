@@ -274,7 +274,7 @@ p {
 
 <div class="hero">
     <video autoplay muted loop playsinline class="bg-video">
-        <source src="Vid4 .mp4" type="video/mp4">
+        <source src="vid4.mp4" type="video/mp4">
     </video>
 
     <h1>AI Tools for Students</h1>
@@ -314,17 +314,7 @@ p {
         🧠 Find tools for me
     </button>
 
-    <button onclick="resetCards()" style="
-        padding:10px 15px;
-        border:none;
-        border-radius:8px;
-        background:#e74c3c;
-        color:white;
-        cursor:pointer;
-        margin-left:5px;
-    ">
-        Reset
-    </button>
+
 </div>
 
 <button class="dark-toggle" onclick="toggleDarkMode()" id="darkBtn">
@@ -630,8 +620,8 @@ function openQuiz() {
         else if (x === "2") results.push("Dyslexia");
         else if (x === "3") results.push("Deaf");
         else if (x === "4") results.push("Language learning");
-        else if (x === "5") results.push("Autism support");
-        else if (x === "6") results.push("Vision support");
+        else if (x === "5") results.push("Autism");
+        else if (x === "6") results.push("Blind");
     });
 
     if (results.length === 0) {
@@ -653,20 +643,13 @@ function openQuiz() {
 
    
     alert(
-        "✨ I built your personalized toolkit!\n" +
         "🧠 Based on your needs:\n\n" +
         results.join(" + ").toUpperCase() +
         "\n\n👉 Scroll to explore your recommended tools"
     );
 }
 
-function resetCards() {
-    const cards = document.querySelectorAll(".card");
 
-    cards.forEach(card => {
-        card.style.display = "block";
-    });
-}
 </script>
 </body>
 </html>
