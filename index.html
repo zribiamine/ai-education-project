@@ -5,6 +5,7 @@
 
     <style>
 body {
+    transition: 0.7s;
     margin: 0;
     padding: 0;
 }
@@ -196,6 +197,74 @@ p {
     object-fit: contain;
     margin-bottom: 8px;
 }
+@media (max-width: 600px) {
+    .card {
+        padding: 8px;
+        min-height: 110px;
+        border-radius: 12px;
+    }
+}
+@media (max-width: 600px) {
+    .card img {
+        width: 45px;
+        height: 45px;
+        border-radius: 10px;
+    }
+}
+@media (max-width: 600px) {
+    .card strong {
+        font-size: 13px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .desc {
+        font-size: 11px;
+        line-height: 1.2;
+    }
+}
+@media (max-width: 600px) {
+    .card a {
+        display: inline-block;
+        font-size: 11px;
+        padding: 5px 8px;
+        margin-top: 6px;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        gap: 10px;
+    }
+}
+@media (max-width: 600px) {
+    .filters button,
+    .dark-toggle {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+.features-badges {
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+
+.features-badges span {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+
     </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -205,11 +274,20 @@ p {
 
 <div class="hero">
     <video autoplay muted loop playsinline class="bg-video">
-        <source src="AI-Brain-pinterest-video-downloader.mp4" type="video/mp4">
+        <source src="Video .mp4" type="video/mp4">
     </video>
 
     <h1>AI Tools for Students</h1>
-    <p>Best Artificial Intelligence tools to help students learn smarter and faster</p>
+   <p>
+    This platform helps all students learn better using AI tools, 
+    including accessibility tools for different learning needs.
+</p>
+<div class="features-badges">
+    <span>🎓 All students</span>
+    <span>♿ Accessibility included</span>
+    <span>🧠 Guided selection (“what do you need?”)</span>
+    <span>⚡ Instant filtering </span>
+</div>
 </div>
 
 <div class="content">
@@ -224,14 +302,46 @@ p {
     <button class="filter-btn" onclick="filterCards('autism', this)">Autism</button>
     <button class="filter-btn" onclick="filterCards('language', this)">Language</button>
 </div>
+<div style="text-align:center; margin:10px;">
+    <button onclick="openQuiz()" style="
+        padding:10px 15px;
+        border:none;
+        border-radius:8px;
+        background:#2ecc71;
+        color:white;
+        cursor:pointer;
+    ">
+        🧠 Find tools for me
+    </button>
+
+    <button onclick="resetCards()" style="
+        padding:10px 15px;
+        border:none;
+        border-radius:8px;
+        background:#e74c3c;
+        color:white;
+        cursor:pointer;
+        margin-left:5px;
+    ">
+        Reset
+    </button>
+</div>
+
 <button class="dark-toggle" onclick="toggleDarkMode()" id="darkBtn">
     ☾
 </button>
 <div class="container">
 
 <!-- ================= OLD CARDS (ALL ADDED data-category="all") ================= -->
- <div class="card" data-category="all">NotebookLM (Google) <br><p class="desc">Helps you understand and summarize your documents.</p><a href="https://notebooklm.google.com" target="_blank">Open</a></div>
 
+ <div class="card" data-category="all">
+    <img src="notebooklm.png">
+    <strong>NotebookLM (Google)</strong>
+
+    <p class="desc">Helps you understand and summarize your documents.</p>
+
+    <a href="https://notebooklm.google.com" target="_blank">Open</a>
+</div>
 <div class="card" data-category="all">
     <img src="chat.jpg" alt="ChatGPT">
     <strong>ChatGPT</strong>
@@ -240,80 +350,227 @@ p {
 
     <a href="https://chat.openai.com" target="_blank">Open</a>
 </div>
-<div class="card" data-category="all">Photomath <br><p class="desc">Scan math problems and get instant solutions.</p><a href="https://photomath.com" target="_blank">Open</a></div>
+<div class="card" data-category="all">
+    <img src="photomath.png" alt="ChatGPT">
+    <strong>Photomath</strong>
 
-<div class="card" data-category="all">Perplexity AI <br><p class="desc">Search engine with AI answers and reliable sources.</p><a href="https://www.perplexity.ai" target="_blank">Open</a></div>
+    <p class="desc">Scan math problems and get instant solutions.</p>
 
-<div class="card" data-category="all">Claude AI <br><p class="desc">AI assistant focused on writing, analysis, and long documents.</p><a href="https://claude.ai" target="_blank">Open</a></div>
+    <a href="https://photomath.com" target="_blank">Open</a>
+</div>
 
-<div class="card" data-category="all">Notion AI <br><p class="desc">Helps organize notes, summarize content, and boost productivity.</p><a href="https://www.notion.so/product/ai" target="_blank">Open</a></div>
+<div class="card" data-category="all">
+    <img src="perplexity.webp">
+    <strong>Perplexity AI </strong>
+    <p class="desc">Search engine with AI answers and reliable sources.</p>
+    <a href="https://www.perplexity.ai" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="claude.webp">
+    <strong>Claude AI </strong>
+    <p class="desc">AI assistant focused on writing, analysis, and long documents.</p>
+    <a href="https://claude.ai" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="notion.png">
+    <strong>Notion AI</strong>
+    <p class="desc">Helps organize notes, summarize content, and boost productivity.</p>
+    <a href="https://www.notion.so/product/ai" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="grammaly.png">
+    <strong>Grammarly </strong>
+    <p class="desc">Checks grammar, spelling, and improves writing clarity.</p>
+    <a href="https://www.grammarly.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="copy.png">
+    <strong>QuillBot </strong>
+    <p class="desc">Paraphrases text and improves sentence structure.</p>
+    <a href="https://quillbot.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="gemini.png">
+    <strong>Google Gemini </strong>
+    <p class="desc">Google’s AI tool for research, writing, and problem solving.</p>
+    <a href="https://gemini.google.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="canva.png">
+    <strong>Canva AI </strong>
+    <p class="desc">Creates designs, presentations, and visuals easily.</p>
+    <a href="https://www.canva.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="duolingo.png">
+   <strong> Duolingo </strong>
+    <p class="desc">Learn languages in a fun and interactive way.</p>
+    <a href="https://www.duolingo.com" target="_blank">Open</a>
+</div>
 
-<div class="card" data-category="all">Grammarly <br><p class="desc">Checks grammar, spelling, and improves writing clarity.</p><a href="https://www.grammarly.com" target="_blank">Open</a></div>
+<div class="card" data-category="all">
+    <img src="socratic.png">
+    <strong>Socratic by Google</strong>
+    <p class="desc">Explains homework questions using AI.</p>
+    <a href="https://socratic.org" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="khan.png">
+    <strong>Khan Academy AI </strong>
+    <p class="desc">Personalized learning with clear explanations and exercises.</p>
+    <a href="https://www.khanacademy.org" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="mathway.png">
+   <strong> Mathway </strong>
+    <p class="desc">Solves math problems step by step.</p>
+    <a href="https://www.mathway.com" target="_blank">Open</a>
+</div>
 
-<div class="card" data-category="all">QuillBot <br><p class="desc">Paraphrases text and improves sentence structure.</p><a href="https://quillbot.com" target="_blank">Open</a></div>
+<div class="card" data-category="all">
+    <img src="wolfram.png" >
+    <strong>Wolfram Alpha </strong>
+    <p class="desc">Powerful tool for math, science, and data analysis.</p>
+    <a href="https://www.wolframalpha.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="deepl.png">
+    <strong>DeepL Translator </strong>
+    <p class="desc">High-quality translation with natural results.</p>
+    <a href="https://www.deepl.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="tome.webp">
+     <strong>Tome AI</strong>
+    <p class="desc">Generates presentations automatically from ideas.</p>
+    <a href="https://tome.app" target="_blank">Open</a>
+</div>
 
-<div class="card" data-category="all">Google Gemini <br><p class="desc">Google’s AI tool for research, writing, and problem solving.</p><a href="https://gemini.google.com" target="_blank">Open</a></div>
+<div class="card" data-category="all">
+    <img src="slides.png">
+    <strong>SlidesAI</strong>
+    <p class="desc">Turns text into presentations automatically.</p>
+    <a href="https://slidesai.io" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="copy.png">
+    <strong>Copy.ai </strong>
+    <p class="desc">Generates text for essays, emails, and content.</p>
+    <a href="https://www.copy.ai"target="_blank">Open</a>
+</div>
 
-<div class="card" data-category="all">Canva AI <br><p class="desc">Creates designs, presentations, and visuals easily.</p><a href="https://www.canva.com" target="_blank">Open</a></div>
 
-<div class="card" data-category="all">Duolingo <br><p class="desc">Learn languages in a fun and interactive way.</p><a href="https://www.duolingo.com" target="_blank">Open</a></div>
-
-
-<div class="card" data-category="all">Socratic by Google <br><p class="desc">Explains homework questions using AI.</p><a href="https://socratic.org" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">Khan Academy AI <br><p class="desc">Personalized learning with clear explanations and exercises.</p><a href="https://www.khanacademy.org" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">Mathway <br><p class="desc">Solves math problems step by step.</p><a href="https://www.mathway.com" target="_blank">Open</a></div>
-
-
-<div class="card" data-category="all">Wolfram Alpha <br><p class="desc">Powerful tool for math, science, and data analysis.</p><a href="https://www.wolframalpha.com" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">DeepL Translator <br><p class="desc">High-quality translation with natural results.</p><a href="https://www.deepl.com" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">Tome AI <br><p class="desc">Generates presentations automatically from ideas.</p><a href="https://tome.app" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">SlidesAI <br><p class="desc">Turns text into ready-to-use slides.</p><a href="https://www.slidesai.io" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">Copy.ai <br><p class="desc">Generates text for essays, emails, and content.</p><a href="https://www.copy.ai" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">Jasper AI <br><p class="desc">Advanced writing assistant for structured content.</p><a href="https://www.jasper.ai" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">Elicit AI <br><p class="desc">Helps find and summarize research papers.</p><a href="https://elicit.org" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">SciSpace <br><p class="desc">Explains scientific papers in simple terms.</p><a href="https://www.scispace.com" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">Otter AI <br><p class="desc">Converts speech into text for meetings and lectures.</p><a href="https://otter.ai" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">Gamma AI <br><p class="desc">Creates modern presentations and documents.</p><a href="https://gamma.app" target="_blank">Open</a></div>
-
-<div class="card" data-category="all">Synthesia AI <br><p class="desc">Creates videos using AI avatars.</p><a href="https://www.synthesia.io" target="_blank">Open</a></div>
-
+<div class="card" data-category="all">
+    <img src="jasper.png">
+    <strong>Jasper AI </strong>
+    <p class="desc">Advanced writing assistant for structured content.</p>
+    <a href="https://www.jasper.ai" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="elicit.png">
+    <strong>Elicit AI </strong>
+    <p class="desc">Helps find and summarize research papers.</p>
+    <a href="https://elicit.org" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="scispace.jfif" >
+    <strong>SciSpace </strong>
+    <p class="desc">Explains scientific papers in simple terms.</p>
+    <a href="https://www.scispace.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="otter.png">
+    <strong>Otter AI </strong>
+    <p class="desc">Converts speech into text for meetings and lectures.</p>
+    <a href="https://otter.ai" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="gamma.jfif">
+    <strong>Gamma AI </strong>
+    <p class="desc">Creates modern presentations and documents.</p>
+    <a href="https://gamma.app" target="_blank">Open</a>
+</div>
+<div class="card" data-category="all">
+    <img src="synthesia.png">
+    <strong>Synthesia AI</strong>
+    <p class="desc">Creates AI videos with avatars.</p>
+    <a href="https://www.synthesia.io" target="_blank">Open</a>
+</div>
 <!-- ================= NEW CARDS ================= -->
 
-<div class="card" data-category="blind">Seeing AI (Microsoft) <br><p class="desc">Reads text and describes surroundings.</p><a href="https://www.microsoft.com/en-us/ai/seeing-ai" target="_blank">Open</a></div>
+<div class="card" data-category="blind">
+    <img src="seeing.png">
+    <strong>Seeing AI </strong>
+    <p class="desc">Reads text and describes surroundings.</p>
+    <a href="https://www.microsoft.com/en-us/ai/seeing-ai" target="_blank">Open</a>
+</div>
+<div class="card" data-category="blind">
+    <img src="bemyeyes.png">
+    <strong>Be My Eyes</strong>
+    <p class="desc">AI helps blind users understand images and environment.</p>
+    <a href="https://www.bemyeyes.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="deaf">
+    <img src="ava.jfif">
+    <strong>AVA </strong>
+    <p class="desc">Real-time speech-to-text transcription.</p>
+    <a href="https://www.ava.me" target="_blank">Open</a>
+</div>
+<div class="card" data-category="deaf">
+    <img src="transcribe.png" >
+    <strong>Google Live Transcribe</strong>
+    <p class="desc">Live captions for conversations.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.google.audio.hearing.visualization.accessibility.scribe" target="_blank">Open</a>
+</div>
+<div class="card" data-category="dyslexia">
+    <img src="microsoft.jpg" >
+   <strong> Microsoft Immersive Reader </strong>
+    <p class="desc">Improves reading with text-to-speech and spacing tools.</p>
+    <a href="https://www.microsoft.com/en-us/education/products/immersive-reader" target="_blank">Open</a>
+</div>
+<div class="card" data-category="dyslexia">
+    <img src="speechify.png" >
+    <strong>Speechify </strong>
+    <p class="desc">Turns text into natural audio reading.</p>
+    <a href="https://speechify.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="dyslexia">
+    <img src="ghotit.png">
+   <strong> Ghotit Real Writer </strong>
+    <p class="desc">AI spelling and writing help.</p>
+    <a href="https://www.ghotit.com" target="_blank">Open</a>
+</div>
 
-<div class="card" data-category="blind">Be My Eyes (Be My AI) <br><p class="desc">AI helps blind users understand images and environment.</p><a href="https://www.bemyeyes.com" target="_blank">Open</a></div>
-
-<div class="card" data-category="deaf">AVA <br><p class="desc">Real-time speech-to-text transcription.</p><a href="https://www.ava.me" target="_blank">Open</a></div>
-
-<div class="card" data-category="deaf">Google Live Transcribe <br><p class="desc">Live captions for conversations.</p><a href="https://play.google.com/store/apps/details?id=com.google.audio.hearing.visualization.accessibility.scribe" target="_blank">Open</a></div>
-
-<div class="card" data-category="dyslexia">Microsoft Immersive Reader <br><p class="desc">Improves reading with text-to-speech and spacing tools.</p><a href="https://www.microsoft.com/en-us/education/products/immersive-reader" target="_blank">Open</a></div>
-
-<div class="card" data-category="dyslexia">Speechify <br><p class="desc">Turns text into natural audio reading.</p><a href="https://speechify.com" target="_blank">Open</a></div>
-
-<div class="card" data-category="dyslexia">Ghotit Real Writer <br><p class="desc">AI spelling and writing help.</p><a href="https://www.ghotit.com" target="_blank">Open</a></div>
-
-<div class="card" data-category="adhd">Goblin Tools <br><p class="desc">Breaks tasks into simple steps.</p><a href="https://goblin.tools" target="_blank">Open</a></div>
-
-<div class="card" data-category="autism">Otsimo <br><p class="desc">Educational games for autistic learners.</p><a href="https://otsimo.com" target="_blank">Open</a></div>
-
-<div class="card" data-category="autism">Birdhouse for Autism <br><p class="desc">Tracks learning and behavior.</p><a href="https://birdhousehq.com" target="_blank">Open</a></div>
-
-<div class="card" data-category="language">ELSA Speak <br><p class="desc">AI pronunciation and speaking feedback.</p><a href="https://elsaspeak.com" target="_blank">Open</a></div>
-
-<div class="card" data-category="language">Google Translate <br><p class="desc">AI translation tool.</p><a href="https://translate.google.com" target="_blank">Open</a></div>
-
+<div class="card" data-category="adhd">
+    <img src="goblin.png">
+    <strong>Goblin Tools</strong>
+    <p class="desc">Breaks tasks into simple steps.</p>
+    <a href="https://goblin.tools" target="_blank">Open</a>
+</div>
+<div class="card" data-category="autism">
+    <img src="otsimo.png">
+    <strong>Otsimo </strong>
+    <p class="desc">Educational games for autistic learners.</p>
+    <a href="https://otsimo.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="autism">
+    <img src="birdhouse.png">
+    <strong>Birdhouse for Autism </strong>
+    <p class="desc">Tracks learning and behavior.</p>
+    <a href="https://birdhousehq.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="language">
+    <img src="elsa.webp">
+    <strong>ELSA Speak </strong>
+    <p class="desc">AI pronunciation and speaking feedback.</p>
+    <a href="https://elsaspeak.com" target="_blank">Open</a>
+</div>
+<div class="card" data-category="language">
+    <img src="translate.webp" >
+    <strong>Google Translate</strong>
+    <p class="desc">AI translation tool.</p>
+    <a href="https://translate.google.com" target="_blank">Open</a>
+</div>
 </div>
 </div>
 
@@ -345,6 +602,70 @@ function toggleDarkMode() {
     } else {
         btn.innerHTML = "☾";  // moon (lune style)
     }
+}
+function openQuiz() {
+
+    let step1 = prompt(
+        "👋 Hi! I will recommend tools for you.\n\n" +
+        "What do you struggle with?\n\n" +
+        "Type numbers separated by comma:\n\n" +
+        "1 - Focus / ADHD\n" +
+        "2 - Reading / Dyslexia\n" +
+        "3 - Hearing / Deaf\n" +
+        "4 - Language learning\n" +
+        "5 - Learning support / Autism\n" +
+        "6 - Vision support / Blind\n"
+    );
+
+    if (!step1) return;
+
+    let input = step1.split(",");
+
+    let results = [];
+
+    input.forEach(x => {
+        x = x.trim();
+
+        if (x === "1") results.push("ADHD");
+        else if (x === "2") results.push("Dyslexia");
+        else if (x === "3") results.push("Deaf");
+        else if (x === "4") results.push("Language learning");
+        else if (x === "5") results.push("Autism support");
+        else if (x === "6") results.push("Vision support");
+    });
+
+    if (results.length === 0) {
+        alert("❌ Please choose valid options (1–6)");
+        return;
+    }
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let cat = card.getAttribute("data-category");
+
+        if (results.map(r => r.toLowerCase()).includes(cat) || cat === "all") {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+   
+    alert(
+        "✨ I built your personalized toolkit!\n" +
+        "🧠 Based on your needs:\n\n" +
+        results.join(" + ").toUpperCase() +
+        "\n\n👉 Scroll to explore your recommended tools"
+    );
+}
+
+function resetCards() {
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        card.style.display = "block";
+    });
 }
 </script>
 </body>
